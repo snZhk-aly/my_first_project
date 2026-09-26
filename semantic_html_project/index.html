@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мир драйва — сноуборд и лыжи</title>
+</head>
+<body>
+    <header>
+        <h1>Мир драйва</h1>
+        <p>Сноуборд. Лыжи. Горы. Скорость.</p>
+            <ul>
+                <li><a href="#about">О сайте</a></li>
+                <li><a href="#posts">Посты</a></li>
+                <li><a href="#schedule">Сезон</a></li>
+                <li><a href="#subscribe">Подписка</a></li>
+            </ul>
+    </header>
+    <main>
+        <section id="about">
+            <h2>Что такое драйв в горах</h2>
+            <p>
+                Драйв - это когда ты летишь по склону, снег бьёт в лицо, а сердце
+                стучит быстрее. Сноуборд и лыжи - это не просто спорт, это свобода,
+                скорость и адреналин. Здесь мы говорим о горах и всём, что с ними связано.
+            </p>
+        </section>
+        <article id="posts">
+            <header>
+                <h2>Первый раз на сноуборде</h2>
+                <p>Опубликовано:
+                    <time datetime="2026-09-22">22 сентября 2026</time>
+                </p>
+            </header>
+
+            <figure>
+                <img src="https://thumbs.dreamstime.com/b/none-159826734.jpg" alt="Сноубордист на склоне" width="400">
+                <figcaption>Первый спуск — самый запоминающийся</figcaption>
+            </figure>
+
+            <p>
+                Первый раз на сноуборде — это больно, смешно и незабываемо.
+                Ты падаешь, встаёшь, снова падаешь. Но когда получается проехать
+                хотя бы десять метров — эмоции перекрывают всё.
+            </p>
+
+            <section>
+                <h3>Что нужно новичку</h3>
+                <ul>
+                    <li>Шлем и защита</li>
+                    <li>Удобные ботинки</li>
+                    <li>Терпение и храбрость</li>
+                </ul>
+            </section>
+        </article>
+        <article>
+            <header>
+                <h2>Лыжи или сноуборд: что выбрать</h2>
+                <p>Опубликовано:
+                    <time datetime="2026-09-18">18 сентября 2026</time>
+                </p>
+            </header>
+
+            <figure>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThAqj0cI6vu0rNWTxoNlpJExI6pA1S2_YzBJOV2_pgTqHsw7OybYzQ8hw&s=10" alt="Лыжник спускается по склону" width="400">
+                <figcaption>Лыжи — классика гор</figcaption>
+            </figure>
+
+            <p>
+                Лыжи проще для новичков и быстрее на трассе. Сноуборд — стильнее
+                и даёт больше свободы в трюках. Выбор зависит от того, что тебе ближе:
+                скорость по трассе или фристайл в парке.
+            </p>
+        </article>
+        <section id="schedule">
+            <h2>Календарь сезона</h2>
+            <table>
+                <caption>Ближайшие выезды в горы</caption>
+                <thead>
+                    <tr>
+                        <th scope="col">Дата</th>
+                        <th scope="col">Курорт</th>
+                        <th scope="col">Тип</th>
+                        <th scope="col">Уровень</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>15.12.2026</td>
+                        <td>Красная Поляна</td>
+                        <td>Сноуборд</td>
+                        <td>Новички</td>
+                    </tr>
+                    <tr>
+                        <td>10.01.2027</td>
+                        <td>Шерегеш</td>
+                        <td>Лыжи</td>
+                        <td>Средний</td>
+                    </tr>
+                    <tr>
+                        <td>05.02.2027</td>
+                        <td>Домбай</td>
+                        <td>Фрирайд</td>
+                        <td>Продвинутый</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <section id="subscribe">
+            <h2>Подписка на новости</h2>
+            <form action="#" method="post">
+                <p>
+                    <label for="name">Имя:</label>
+                    <input type="text" id="name" name="name" required>
+                </p>
+                <p>
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </p>
+                <p>
+                    <label for="sport">Что тебе ближе:</label>
+                    <select id="sport" name="sport">
+                        <option>Сноуборд</option>
+                        <option>Лыжи</option>
+                        <option>И то, и другое</option>
+                        <option>Пока не знаю</option>
+                    </select>
+                </p>
+                <p>
+                    <label>
+                        <input type="checkbox" name="agree" required>
+                        Согласен на обработку данных
+                    </label>
+                </p>
+                <p>
+                    <button type="submit">Подписаться</button>
+                </p>
+            </form>
+        </section>
+
+    </main>
+    <aside>
+        <h2>Полезное</h2>
+        <ul>
+            <li><a href="https://www.kant.ru/articles/kak-vybrat-snoubord/">Как выбрать сноуборд</a></li>
+            <li><a href="https://www.kp.ru/russia/luchshie-sklony-i-kurorty/">Топ-10 курортов России</a></li>
+            <li><a href="https://muzofond.fm/collections/sport/%D0%BF%D0%BB%D0%B5%D0%B9%D0%BB%D0%B8%D1%81%D1%82%20%D0%B4%D0%BB%D1%8F%20%D0%BB%D1%8B%D0%B6%D0%BD%D0%B8%D0%BA%D0%BE%D0%B2%20%D0%B8%20%D1%81%D0%BD%D0%BE%D1%83%D0%B1%D0%BE%D1%80%D0%B4%D0%B8%D1%81%D1%82%D0%BE%D0%B2">Плейлист для спуска</a></li>
+        </ul>
+        <section>
+            <h3>Цитата недели</h3>
+            <p>«Движение лыж надо опережать и телом, и разумом.»
+</p>
+        </section>
+    </aside>
+    <footer>
+        <p>&copy; 2026 Мир драйва. Все права защищены.</p>
+        <address>
+            Связь: <a href="mailto:drive@mountains.ru">drive@mountains.ru</a>
+        </address>
+    </footer>
+
+</body>
+</html>
