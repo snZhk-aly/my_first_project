@@ -1,0 +1,214 @@
+/* ===== Переменные ===== */
+:root {
+    --primary: #3498db;
+    --secondary: #2c3e50;
+    --bg: #f5f5f5;
+    --radius: 8px;
+    --danger: #e74c3c;
+}
+
+/* ===== Базовые ===== */
+body {
+    background-color: var(--bg);
+    color: #333;
+    padding: 20px;
+    font-family: 'Segoe UI', Arial, sans-serif;
+    line-height: 1.6;
+}
+
+h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+h1, h2, h3 {
+    font-family: Georgia, serif;
+}
+
+.main-nav {
+    background-color: var(--secondary);
+    padding: 10px;
+    border-radius: 6px;
+}
+
+.nav-link {
+    color: #ecf0f1;
+    padding: 8px 12px;
+    display: inline-block;
+}
+
+#site-title {
+    color: var(--secondary);
+    border-bottom: 2px solid var(--primary);
+    padding-bottom: 5px;
+}
+
+#site-footer {
+    margin-top: 30px;
+    text-align: center;
+    color: #777;
+    font-size: 0.9rem;
+}
+
+/* ===== Комбинированные ===== */
+.post-list li {
+    padding: 6px 0;
+    border-bottom: 1px dashed #ccc;
+}
+
+.content > .post {
+    background: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: var(--radius);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+}
+
+h1 + nav {
+    margin-top: 15px;
+}
+
+a[href="#"] {
+    border-bottom: 0.0001px dotted var(--primary);
+}
+
+/* ===== Каскад ===== */
+p {
+    color: #555;
+}
+
+.post-text {
+    color: #222;
+}
+
+article .post-text {
+    color: #111;
+    font-size: 1.05rem;
+}
+
+/* ===== Специфичность ===== */
+li {
+    color: #444;
+}
+
+.important {
+    color: var(--danger);
+    font-weight: bold;
+}
+
+ul li.important {
+    background-color: #fdecea;
+    padding-left: 8px;
+}
+
+.post.featured-post {
+    border-left: 4px solid var(--primary);
+}
+
+/* ===== Наследование ===== */
+.content {
+    color: #2c3e50;
+}
+
+.post-title {
+    color: inherit;
+}
+
+/* ===== Псевдоклассы ===== */
+.nav-link:hover {
+    background-color: var(--primary);
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:focus {
+    outline: 2px solid #e67e22;
+}
+
+.post-list li:nth-child(odd) {
+    background-color: #fafafa;
+}
+
+.post-list li:nth-child(even) {
+    background-color: #f0f0f0;
+}
+
+.post-list li:first-child {
+    border-top: 2px solid var(--primary);
+}
+
+
+.post-list li:not(.important) {
+    opacity: 0.85;
+}
+
+.read-more:active {
+    transform: scale(0.98);
+}
+
+/* ===== Псевдоэлементы ===== */
+.post-title::before {
+    content: "📄 ";
+}
+
+.read-more::after {
+    content: " →";
+    transition: margin-left 0.3s;
+}
+
+.read-more:hover::after {
+    margin-left: 5px;
+}
+
+.post-text::first-letter {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.post-text::first-line {
+    font-variant: small-caps;
+}
+
+::selection {
+    background: var(--primary);
+    color: #fff;
+}
+
+/* ===== currentColor ===== */
+.read-more {
+    color: var(--primary);
+    border: 1px solid currentColor;
+    padding: 6px 12px;
+    display: inline-block;
+    border-radius: 4px;
+}
+
+.read-more:hover {
+    color: var(--danger);
+}
+
+/* ===== Анимация ===== */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.post {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ===== Медиа ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 10px;
+    }
+    .main-nav ul {
+        display: flex;
+        flex-direction: column;
+        gap: 5px;
+    }
+    #site-title {
+        font-size: 1.5rem;
+    }
+}
