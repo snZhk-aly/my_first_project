@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <!-- Обязательный viewport для адаптивности -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практическая работа №6 — Адаптивная вёрстка</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Шапка с навигацией и кнопкой-бургером -->
+  <header class="header">
+    <div class="container header-inner">
+      <a href="#" class="logo">MySite</a>
+
+      <button class="burger" id="burger" aria-label="Открыть меню">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <nav class="nav" id="nav">
+        <a href="#features">Возможности</a>
+        <a href="#gallery">Галерея</a>
+        <a href="#about">О нас</a>
+        <a href="#contacts">Контакты</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Главный баннер -->
+  <section class="hero">
+    <div class="container">
+      <h1 class="hero-title">Адаптивная вёрстка</h1>
+      <p class="hero-text">
+        Одна страница — любое устройство. Меняйте размер окна и смотрите,
+        как макет подстраивается.
+      </p>
+      <a href="#features" class="btn">Подробнее</a>
+    </div>
+  </section>
+
+  <!-- Сетка карточек -->
+  <section id="features" class="section">
+    <div class="container">
+      <h2 class="section-title">Возможности</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="card-thumb">📱</div>
+          <h3>Мобильные</h3>
+          <p>Корректно отображается на телефонах от 320px.</p>
+        </div>
+        <div class="card">
+          <div class="card-thumb">💻</div>
+          <h3>Планшеты</h3>
+          <p>Промежуточные брейкпоинты для планшетов.</p>
+        </div>
+        <div class="card">
+          <div class="card-thumb">🖥</div>
+          <h3>Десктоп</h3>
+          <p>Широкие экраны используют всё пространство.</p>
+        </div>
+        <div class="card">
+          <div class="card-thumb">⚡</div>
+          <h3>Быстро</h3>
+          <p>Никаких лишних библиотек, только CSS и чуть-чуть JS.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Галерея с адаптивной сеткой -->
+  <section id="gallery" class="section section-alt">
+    <div class="container">
+      <h2 class="section-title">Галерея</h2>
+      <div class="gallery">
+        <div class="gallery-item">1</div>
+        <div class="gallery-item">2</div>
+        <div class="gallery-item">3</div>
+        <div class="gallery-item">4</div>
+        <div class="gallery-item">5</div>
+        <div class="gallery-item">6</div>
+        <div class="gallery-item">7</div>
+        <div class="gallery-item">8</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Текстовый блок с адаптивной типографикой -->
+  <section id="about" class="section">
+    <div class="container">
+      <h2 class="section-title">О нас</h2>
+      <p class="text">
+        Этот текст использует функцию clamp() для размера шрифта. На телефоне
+        он мелкий, на десктопе — крупный, и всё это без медиа-запросов.
+        Попробуйте изменить ширину окна и увидите плавное изменение размера.
+      </p>
+    </div>
+  </section>
+
+  <!-- Футер -->
+  <footer id="contacts" class="footer">
+    <div class="container footer-grid">
+      <div>
+        <h4>MySite</h4>
+        <p>Адаптивная вёрстка — практическая работа №6.</p>
+      </div>
+      <div>
+        <h4>Разделы</h4>
+        <p><a href="#features">Возможности</a></p>
+        <p><a href="#gallery">Галерея</a></p>
+        <p><a href="#about">О нас</a></p>
+      </div>
+      <div>
+        <h4>Контакты</h4>
+        <p>email@example.com</p>
+        <p>+7 (999) 000-00-00</p>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <p>© 2026 MySite. Все права защищены.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
