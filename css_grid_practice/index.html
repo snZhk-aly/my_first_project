@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практическая работа №5 — CSS Grid</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Основной макет страницы с именованными областями Grid -->
+  <div class="page">
+
+    <header class="header">
+      <h1>MySite — CSS Grid</h1>
+      <nav class="nav">
+        <a href="#gallery">Галерея</a>
+        <a href="#features">Возможности</a>
+        <a href="#adaptive">Адаптив</a>
+      </nav>
+    </header>
+
+    <aside class="sidebar">
+      <h2>Сайдбар</h2>
+      <p>Боковая панель. Область sidebar в grid-template-areas.</p>
+    </aside>
+
+    <main class="main">
+      <h2>Основной контент</h2>
+      <p>Центральная область страницы. Занимает больше всего места.</p>
+
+      <!-- Вложенная Grid-сетка для галереи -->
+      <section id="gallery" class="section">
+        <h3 class="section-title">Галерея (вложенная сетка)</h3>
+        <div class="gallery">
+          <div class="gallery-item">1</div>
+          <div class="gallery-item">2</div>
+          <div class="gallery-item">3</div>
+          <div class="gallery-item">4</div>
+          <div class="gallery-item">5</div>
+          <div class="gallery-item">6</div>
+        </div>
+      </section>
+
+      <!-- Адаптивная сетка через auto-fit и minmax -->
+      <section id="adaptive" class="section">
+        <h3 class="section-title">Адаптивные карточки (auto-fit + minmax)</h3>
+        <div class="adaptive-grid">
+          <div class="adaptive-item">Карточка 1</div>
+          <div class="adaptive-item">Карточка 2</div>
+          <div class="adaptive-item">Карточка 3</div>
+          <div class="adaptive-item">Карточка 4</div>
+          <div class="adaptive-item">Карточка 5</div>
+          <div class="adaptive-item">Карточка 6</div>
+        </div>
+      </section>
+
+      <!-- Демонстрация repeat() и auto-fill -->
+      <section id="features" class="section">
+        <h3 class="section-title">Сетка с repeat() и auto-fill</h3>
+        <div class="repeat-grid">
+          <div class="repeat-item">A</div>
+          <div class="repeat-item">B</div>
+          <div class="repeat-item">C</div>
+          <div class="repeat-item">D</div>
+        </div>
+      </section>
+
+    </main>
+
+    <aside class="ads">
+      <h2>Реклама</h2>
+      <p>Область ads. На мобильных может скрываться или перемещаться.</p>
+    </aside>
+
+    <footer class="footer">
+      <div class="footer-col">
+        <h4>О нас</h4>
+        <p>Короткое описание сайта.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Контакты</h4>
+        <p>email@example.com</p>
+      </div>
+      <div class="footer-col">
+        <h4>Ссылки</h4>
+        <p>Полезные ссылки здесь.</p>
+      </div>
+    </footer>
+
+  </div>
+
+</body>
+</html>
