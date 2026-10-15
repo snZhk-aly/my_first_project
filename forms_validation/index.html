@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практическая работа №7 — Формы и валидация</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <main class="page">
+    <div class="form-wrap">
+
+      <header class="form-header">
+        <h1>Регистрация</h1>
+        <p>Заполните форму. Поля со звёздочкой обязательны.</p>
+      </header>
+
+      <form class="form" id="signupForm" novalidate>
+
+        <!-- Личные данные -->
+        <fieldset class="fieldset">
+          <legend>Личные данные</legend>
+
+          <div class="field">
+            <label for="name">Имя <span class="req">*</span></label>
+            <input
+              type="text"
+              id="name"
+              name="name"
+              placeholder="Иван"
+              required
+              minlength="2"
+              autocomplete="given-name"
+              aria-describedby="name-error"
+            >
+            <p class="error" id="name-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="birthdate">Дата рождения <span class="req">*</span></label>
+            <input
+              type="date"
+              id="birthdate"
+              name="birthdate"
+              required
+              aria-describedby="birthdate-help birthdate-error"
+            >
+            <p class="help" id="birthdate-help">Регистрация доступна с 18 лет.</p>
+            <p class="error" id="birthdate-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="email">Email <span class="req">*</span></label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              placeholder="ivan@example.com"
+              required
+              autocomplete="email"
+              aria-describedby="email-error"
+            >
+            <p class="error" id="email-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="phone">Телефон <span class="req">*</span></label>
+            <input
+              type="tel"
+              id="phone"
+              name="phone"
+              placeholder="+7 (999) 123-45-67"
+              required
+              pattern="^\+?[0-9\s\-\(\)]{10,18}$"
+              autocomplete="tel"
+              aria-describedby="phone-help phone-error"
+            >
+            <p class="help" id="phone-help">Только цифры, пробелы, скобки, дефис и знак +.</p>
+            <p class="error" id="phone-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="site">Личный сайт</label>
+            <input
+              type="url"
+              id="site"
+              name="site"
+              placeholder="https://example.com"
+              autocomplete="url"
+              aria-describedby="site-help site-error"
+            >
+            <p class="help" id="site-help">Необязательно. Полный адрес с https://</p>
+            <p class="error" id="site-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="city">Город <span class="req">*</span></label>
+            <select id="city" name="city" required aria-describedby="city-error">
+              <option value="">— выберите город —</option>
+              <option value="moscow">Москва</option>
+              <option value="spb">Санкт-Петербург</option>
+              <option value="novosibirsk">Новосибирск</option>
+              <option value="kazan">Казань</option>
+              <option value="other">Другой</option>
+            </select>
+            <p class="error" id="city-error" role="alert"></p>
+          </div>
+        </fieldset>
+
+        <!-- Пол -->
+        <fieldset class="fieldset">
+          <legend>Пол</legend>
+
+          <div class="radio-group" role="radiogroup" aria-describedby="gender-error">
+            <label class="radio">
+              <input type="radio" name="gender" value="male" required>
+              <span>Мужской</span>
+            </label>
+            <label class="radio">
+              <input type="radio" name="gender" value="female">
+              <span>Женский</span>
+            </label>
+          </div>
+          <p class="error" id="gender-error" role="alert"></p>
+        </fieldset>
+
+        <!-- О себе -->
+        <fieldset class="fieldset">
+          <legend>О себе</legend>
+
+          <div class="field">
+            <label for="bio">Короткое описание</label>
+            <textarea
+              id="bio"
+              name="bio"
+              rows="3"
+              maxlength="200"
+              placeholder="Пара слов о себе"
+              aria-describedby="bio-help bio-error"
+            ></textarea>
+            <p class="help" id="bio-help">
+              <span id="bio-count">0</span> / 200 символов
+            </p>
+            <p class="error" id="bio-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="avatar">Аватар</label>
+            <input
+              type="file"
+              id="avatar"
+              name="avatar"
+              accept="image/png, image/jpeg"
+              aria-describedby="avatar-help avatar-error"
+            >
+            <p class="help" id="avatar-help">
+              PNG или JPG, не больше 2 МБ. Необязательно.
+            </p>
+            <p class="error" id="avatar-error" role="alert"></p>
+          </div>
+        </fieldset>
+
+        <!-- Пароль -->
+        <fieldset class="fieldset">
+          <legend>Пароль</legend>
+
+          <div class="field">
+            <label for="password">Пароль <span class="req">*</span></label>
+            <div class="input-with-btn">
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Минимум 8 символов"
+                required
+                minlength="8"
+                autocomplete="new-password"
+                aria-describedby="password-help password-error"
+              >
+              <button
+                type="button"
+                class="toggle-pass"
+                data-target="password"
+                aria-label="Показать пароль"
+              >👁</button>
+            </div>
+            <div class="strength" aria-hidden="true">
+              <span class="strength-bar" id="strength-bar"></span>
+            </div>
+            <p class="help" id="password-help">
+              Минимум 8 символов, хотя бы одна буква и одна цифра.
+            </p>
+            <p class="error" id="password-error" role="alert"></p>
+          </div>
+
+          <div class="field">
+            <label for="confirm">Подтверждение пароля <span class="req">*</span></label>
+            <div class="input-with-btn">
+              <input
+                type="password"
+                id="confirm"
+                name="confirm"
+                placeholder="Повторите пароль"
+                required
+                autocomplete="new-password"
+                aria-describedby="confirm-error"
+              >
+              <button
+                type="button"
+                class="toggle-pass"
+                data-target="confirm"
+                aria-label="Показать пароль"
+              >👁</button>
+            </div>
+            <p class="error" id="confirm-error" role="alert"></p>
+          </div>
+        </fieldset>
+
+        <!-- Согласия -->
+        <fieldset class="fieldset">
+          <legend>Согласия</legend>
+
+          <div class="field field-checkbox">
+            <input
+              type="checkbox"
+              id="agree"
+              name="agree"
+              required
+              aria-describedby="agree-error"
+            >
+            <label for="agree">
+              Я согласен с условиями обработки данных <span class="req">*</span>
+            </label>
+            <p class="error" id="agree-error" role="alert"></p>
+          </div>
+
+          <div class="field field-checkbox">
+            <input type="checkbox" id="news" name="news">
+            <label for="news">Хочу получать новости на email</label>
+          </div>
+        </fieldset>
+
+        <p class="success" id="form-success" role="status" hidden>
+          Форма успешно отправлена!
+        </p>
+
+        <div class="actions">
+          <button type="submit" class="btn btn-primary">Зарегистрироваться</button>
+          <button type="reset" class="btn btn-ghost">Очистить</button>
+        </div>
+
+      </form>
+    </div>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
