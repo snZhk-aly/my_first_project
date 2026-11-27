@@ -1,0 +1,350 @@
+/* Базовые стили */
+
+:root {
+  --color-primary: #1976d2;
+  --color-primary-dark: #115293;
+  --color-danger: #d32f2f;
+  --color-success: #2e7d32;
+  --color-warning: #ed6c02;
+  --color-border: #d5d9de;
+  --color-text: #222;
+  --color-muted: #666;
+  --color-bg: #f5f7fa;
+  --radius: 8px;
+}
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  background: var(--color-bg);
+  color: var(--color-text);
+  line-height: 1.5;
+  padding: 24px 16px;
+}
+
+.page {
+  display: flex;
+  justify-content: center;
+}
+
+.form-wrap {
+  width: 100%;
+  max-width: 600px;
+  background: #fff;
+  padding: 32px;
+  border-radius: 12px;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.06);
+}
+
+.form-header {
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+.form-header h1 {
+  font-size: 26px;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.form-header p {
+  color: var(--color-muted);
+  font-size: 14px;
+}
+
+
+/* Группы */
+
+.fieldset {
+  border: none;
+  margin-bottom: 20px;
+}
+
+.fieldset legend {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: var(--color-muted);
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+
+/* Одно поле */
+
+.field {
+  margin-bottom: 16px;
+  position: relative;
+}
+
+.field label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.req {
+  color: var(--color-danger);
+}
+
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="tel"],
+.field input[type="url"],
+.field input[type="password"],
+.field input[type="date"],
+.field select,
+.field textarea {
+  width: 100%;
+  padding: 11px 14px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #fff;
+  font-family: inherit;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(25, 118, 210, 0.15);
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  color: #a5acb5;
+}
+
+.field input[type="file"] {
+  padding: 8px 0;
+  border: none;
+}
+
+.field input[type="file"]::file-selector-button {
+  padding: 8px 14px;
+  margin-right: 12px;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius);
+  background: #f5f7fa;
+  cursor: pointer;
+  font: inherit;
+}
+
+.field input[type="file"]::file-selector-button:hover {
+  background: #e9edf2;
+}
+
+
+/* Поле с кнопкой внутри (глаз для пароля) */
+
+.input-with-btn {
+  position: relative;
+}
+
+.input-with-btn input {
+  padding-right: 46px;
+}
+
+.toggle-pass {
+  position: absolute;
+  top: 50%;
+  right: 8px;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  font-size: 16px;
+  color: var(--color-muted);
+  transition: background 0.2s;
+}
+
+.toggle-pass:hover {
+  background: #f0f2f5;
+}
+
+
+/* Радиокнопки */
+
+.radio-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.radio {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+  font-size: 14px;
+}
+
+.radio input {
+  width: 18px;
+  height: 18px;
+  accent-color: var(--color-primary);
+}
+
+
+/* Подсказки и ошибки */
+
+.help {
+  margin-top: 6px;
+  font-size: 12px;
+  color: var(--color-muted);
+}
+
+.error {
+  margin-top: 6px;
+  font-size: 13px;
+  color: var(--color-danger);
+  min-height: 18px;
+}
+
+.success {
+  padding: 12px 16px;
+  background: #e8f5e9;
+  color: var(--color-success);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+/* Индикатор надёжности пароля */
+
+.strength {
+  height: 6px;
+  margin-top: 8px;
+  background: #eee;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strength-bar {
+  display: block;
+  height: 100%;
+  width: 0;
+  background: var(--color-danger);
+  transition: width 0.3s, background 0.3s;
+}
+
+.strength-bar.weak { background: var(--color-danger); }
+.strength-bar.medium { background: var(--color-warning); }
+.strength-bar.strong { background: var(--color-success); }
+
+
+/* Состояния валидности */
+
+.field input.invalid,
+.field select.invalid,
+.field textarea.invalid {
+  border-color: var(--color-danger);
+}
+
+.field input.invalid:focus,
+.field select.invalid:focus,
+.field textarea.invalid:focus {
+  box-shadow: 0 0 0 3px rgba(211, 47, 47, 0.15);
+}
+
+.field input.valid,
+.field select.valid,
+.field textarea.valid {
+  border-color: var(--color-success);
+}
+
+
+/* Чекбоксы */
+
+.field-checkbox {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 10px;
+  align-items: start;
+}
+
+.field-checkbox input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+  accent-color: var(--color-primary);
+}
+
+.field-checkbox label {
+  margin: 0;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.field-checkbox .error {
+  grid-column: 1 / -1;
+}
+
+
+/* Кнопки */
+
+.actions {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-top: 8px;
+}
+
+.btn {
+  padding: 12px 20px;
+  border-radius: var(--radius);
+  font-weight: 600;
+  font-size: 15px;
+  transition: background 0.2s, opacity 0.2s;
+}
+
+.btn-primary {
+  background: var(--color-primary);
+  color: #fff;
+  flex: 1;
+}
+
+.btn-primary:hover {
+  background: var(--color-primary-dark);
+}
+
+.btn-ghost {
+  background: transparent;
+  color: var(--color-muted);
+  border: 1.5px solid var(--color-border);
+}
+
+.btn-ghost:hover {
+  background: #f0f2f5;
+}
+
+
+/* Адаптив */
+
+@media (max-width: 480px) {
+  .form-wrap {
+    padding: 20px;
+  }
+
+  .form-header h1 {
+    font-size: 22px;
+  }
+
+  .actions {
+    flex-direction: column;
+  }
+
+  .btn-primary,
+  .btn-ghost {
+    width: 100%;
+  }
+}
