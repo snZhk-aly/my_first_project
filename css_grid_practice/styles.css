@@ -1,0 +1,197 @@
+/* Общие стили страницы */
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+  color: #222;
+  background: #f5f5f5;
+  line-height: 1.5;
+  padding: 16px;
+}
+
+h1, h2, h3, h4 {
+  font-weight: 600;
+}
+
+
+/* Основной макет страницы через именованные области Grid */
+
+.page {
+  display: grid;
+  grid-template-columns: 200px 1fr 180px;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header  header  header"
+    "sidebar main    ads"
+    "footer  footer  footer";
+  gap: 16px;
+  min-height: calc(100vh - 32px);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.header {
+  grid-area: header;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  padding: 16px 24px;
+  background: #1976d2;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.header h1 {
+  font-size: 20px;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.nav a {
+  color: #fff;
+  transition: opacity 0.2s;
+}
+
+.nav a:hover {
+  opacity: 0.7;
+}
+
+.sidebar {
+  grid-area: sidebar;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  border-left: 4px solid #1976d2;
+}
+
+.ads {
+  grid-area: ads;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+  border-left: 4px solid #ff9800;
+}
+
+.main {
+  grid-area: main;
+  padding: 20px;
+  background: #fff;
+  border-radius: 8px;
+}
+
+.footer {
+  grid-area: footer;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+  padding: 20px;
+  background: #222;
+  color: #fff;
+  border-radius: 8px;
+}
+
+.footer-col {
+  padding: 8px;
+}
+
+.footer-col h4 {
+  margin-bottom: 8px;
+  color: #4fc3f7;
+}
+
+.footer-col p {
+  font-size: 14px;
+  color: #ccc;
+}
+
+
+/* Секции внутри main */
+
+.section {
+  margin-top: 28px;
+}
+
+.section-title {
+  margin-bottom: 14px;
+  color: #1976d2;
+  font-size: 18px;
+}
+
+
+/* Вложенная Grid-галерея 3 на 2 */
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 120px);
+  gap: 12px;
+}
+
+.gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ce93d8;
+  color: #fff;
+  font-size: 24px;
+  font-weight: 700;
+  border-radius: 8px;
+}
+
+
+/* Адаптивная сетка через auto-fit и minmax */
+
+.adaptive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 14px;
+}
+
+.adaptive-item {
+  padding: 24px 16px;
+  background: #4caf50;
+  color: #fff;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+
+/* Сетка с repeat() и auto-fill */
+
+.repeat-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  gap: 12px;
+}
+
+.repeat-item {
+  padding: 20px;
+  background: #ffb74d;
+  text-align: center;
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+
+/* Адаптив под узкие экраны */
+
+@media (max-width: 800px) {
+  .page {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "header"
+      "main"
+      "sidebar"
+      "ads"
+      "footer";
+  }
+
+  .footer {
+    grid-template-columns: 1fr;
+  }
+}
