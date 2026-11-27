@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Практическая работа №4 — Flexbox</title>
+  <link rel="stylesheet" href="reset.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- Навигация: логотип слева, меню справа -->
+  <nav class="nav">
+    <div class="logo">MySite</div>
+    <ul class="nav-menu">
+      <li><a href="#cards">Карточки</a></li>
+      <li><a href="#layout">Макет</a></li>
+      <li><a href="#centered">Центр</a></li>
+      <li><a href="#order">Order</a></li>
+    </ul>
+  </nav>
+
+  <!-- Карточки в строку одинаковой ширины -->
+  <section id="cards" class="section">
+    <h2 class="section-title">Карточки (flex: 1)</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Карточка 1</h3>
+        <p>Все карточки одинаковой ширины благодаря flex: 1.</p>
+      </div>
+      <div class="card">
+        <h3>Карточка 2</h3>
+        <p>При сужении окна карточки переносятся на новую строку.</p>
+      </div>
+      <div class="card">
+        <h3>Карточка 3</h3>
+        <p>Flexbox позволяет легко выравнивать содержимое.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Основной макет страницы: шапка, контент с сайдбаром, футер -->
+  <section id="layout" class="section">
+    <h2 class="section-title">Основной макет страницы</h2>
+
+    <div class="layout">
+      <header class="header">Header — шапка сайта</header>
+
+      <div class="content">
+        <main class="main">
+          <h3>Основной контент</h3>
+          <p>Здесь основная информация страницы. Свойство flex: 3 делает эту область шире сайдбара.</p>
+        </main>
+        <aside class="sidebar">
+          <h3>Сайдбар</h3>
+          <p>Дополнительная информация. flex: 1 делает её уже.</p>
+        </aside>
+      </div>
+
+      <!-- Футер с тремя равными колонками -->
+      <footer class="footer">
+        <div class="footer-col">Колонка 1</div>
+        <div class="footer-col">Колонка 2</div>
+        <div class="footer-col">Колонка 3</div>
+      </footer>
+    </div>
+  </section>
+
+  <!-- Центрирование блока по горизонтали и вертикали -->
+  <section id="centered" class="section">
+    <h2 class="section-title">Центрирование через Flexbox</h2>
+    <div class="centered">
+      <div class="box">Я по центру</div>
+    </div>
+  </section>
+
+  <!-- Адаптивные карточки без медиа-запросов -->
+  <section class="section">
+    <h2 class="section-title">Адаптивные карточки (flex: 1 1 250px)</h2>
+    <div class="adaptive-cards">
+      <div class="adaptive-card">Адаптив 1</div>
+      <div class="adaptive-card">Адаптив 2</div>
+      <div class="adaptive-card">Адаптив 3</div>
+      <div class="adaptive-card">Адаптив 4</div>
+      <div class="adaptive-card">Адаптив 5</div>
+      <div class="adaptive-card">Адаптив 6</div>
+    </div>
+  </section>
+
+  <!-- Демонстрация свойства order: меняем визуальный порядок -->
+  <section id="order" class="section">
+    <h2 class="section-title">Эксперимент с order</h2>
+    <div class="order-demo">
+      <div class="item" style="order: 3;">1 (order: 3)</div>
+      <div class="item" style="order: 1;">2 (order: 1)</div>
+      <div class="item" style="order: 2;">3 (order: 2)</div>
+    </div>
+    <p class="note">
+      В HTML порядок: 1, 2, 3. На экране — 2, 3, 1, потому что свойство order меняет визуальный порядок.
+    </p>
+  </section>
+
+  <!-- Нижний футер страницы -->
+  <footer class="page-footer">
+    <p>© 2026 MySite — Практическая работа №4 «Flexbox»</p>
+  </footer>
+
+</body>
+</html>
