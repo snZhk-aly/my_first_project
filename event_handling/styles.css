@@ -1,0 +1,262 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+  color: #333;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  padding: 20px 0;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+header {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 2rem;
+  text-align: center;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+  backdrop-filter: blur(10px);
+}
+
+header h1 {
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+/* Стили задач */
+.task-area {
+  background: rgba(255, 255, 255, 0.95);
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.task-area h3 {
+  color: #2c3e50;
+  margin-bottom: 1rem;
+  border-bottom: 2px solid #ecf0f1;
+  padding-bottom: 0.5rem;
+}
+
+.output {
+  background: #f8f9fa;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border-left: 4px solid #3498db;
+  font-family: monospace;
+  font-size: 0.9rem;
+  word-break: break-word;
+}
+
+button {
+  background: #3498db;
+  color: white;
+  border: none;
+  padding: 0.6rem 1.2rem;
+  margin: 0.25rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.3s ease, transform 0.1s;
+}
+
+button:hover {
+  background: #2980b9;
+}
+
+button:active {
+  transform: translateY(1px);
+}
+
+input[type="text"] {
+  width: 100%;
+  max-width: 300px;
+  padding: 0.6rem;
+  border: 1px solid #bdc3c7;
+  border-radius: 6px;
+  margin: 0.5rem 0;
+  font-size: 0.9rem;
+}
+
+/* Задача 1 */
+.color-box {
+  background: #3498db;
+  color: white;
+  padding: 1.5rem;
+  text-align: center;
+  border-radius: 8px;
+  margin: 1rem 0;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  user-select: none;
+}
+
+/* Задача 3 */
+.item-list {
+  border: 2px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+}
+
+.item {
+  background: white;
+  padding: 0.75rem;
+  margin: 0.5rem 0;
+  border-radius: 6px;
+  border: 1px solid #bdc3c7;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.item:hover {
+  background: #f8f9fa;
+  border-color: #3498db;
+}
+
+.item.selected {
+  background: #d4edda;
+  border-color: #28a745;
+}
+
+.delete {
+  color: #e74c3c;
+  font-weight: bold;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+  transition: background 0.3s ease;
+  font-size: 0.85rem;
+}
+
+.delete:hover {
+  background: #e74c3c;
+  color: white;
+}
+
+/* Задача 4 */
+.prevent-link {
+  display: inline-block;
+  background: #e74c3c;
+  color: white;
+  padding: 1rem 2rem;
+  border-radius: 8px;
+  text-decoration: none;
+  margin: 1rem 0;
+  transition: all 0.3s ease;
+}
+
+.prevent-link:hover {
+  background: #c0392b;
+  transform: translateY(-2px);
+}
+
+.prevent-form {
+  background: #ecf0f1;
+  padding: 1.5rem;
+  border-radius: 8px;
+  margin: 1rem 0;
+}
+
+/* Задача 6 */
+.image-container {
+  width: 300px;
+  height: 200px;
+  border: 2px dashed #bdc3c7;
+  border-radius: 8px;
+  margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  transition: border-color 0.3s;
+}
+
+.image-container img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.image-container.loading {
+  border-color: #3498db;
+  background: #ecf0f1;
+}
+
+.image-container.error {
+  border-color: #e74c3c;
+  background: #fadbd8;
+}
+
+.image-container.success {
+  border-color: #28a745;
+  background: #d4edda;
+}
+
+/* Футер */
+footer {
+  text-align: center;
+  margin-top: 2rem;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: 12px;
+  color: #7f8c8d;
+}
+
+/* Анимации */
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+  100% { transform: scale(1); }
+}
+
+.pulse {
+  animation: pulse 0.5s ease-in-out;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(0); }
+  25% { transform: translate(-5px); }
+  75% { transform: translate(5px); }
+}
+
+.shake {
+  animation: shake 0.3s ease-in-out;
+}
+
+/* Стили для тестов */
+.test-result {
+  margin: 10px 0;
+  padding: 15px;
+  border-radius: 8px;
+  border-left: 5px solid #007acc;
+  background: rgba(255, 255, 255, 0.95);
+  font-family: monospace;
+  font-size: 0.85rem;
+}
+
+.test-success {
+  border-color: #27ae60;
+  background: rgba(39, 174, 96, 0.1);
+}
+
+.test-failure {
+  border-color: #e74c3c;
+  background: rgba(231, 76, 60, 0.1);
+}
